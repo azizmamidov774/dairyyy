@@ -1,1 +1,1 @@
-web: gunicorn auth.wsgi
+gunicorn auth.wsgi:application --bind 0.0.0.0:$PORT
