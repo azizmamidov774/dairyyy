@@ -53,16 +53,16 @@ class RegistrationAPIView(APIView):
             student_class = student_class 
             )
         user.save()
-        refresh_token = RefreshToken.for_user(user)
-        access_token = refresh_token.access_token
+        refresh = RefreshToken.for_user(user)
+        access = refresh.access_token
         
-        print(access_token)
-        print(refresh_token)
+        print(access)
+        print(refresh)
         return Response(
             {
             "message": "Регистрация прошла успешна",
-            "access_token": str(access_token), 
-            "refresh_token": str(refresh_token)
+            "access_token": str(access), 
+            "refresh_token": str(refresh)
             }, 
             status=status.HTTP_201_CREATED
             )
